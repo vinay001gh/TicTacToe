@@ -29,10 +29,10 @@ const checkWin = () => {
     ) {
       document.getElementsByClassName("info")[0].innerHTML =
         cells[value[0]].innerHTML + " won";
-      cells[value[0]].style.cssText = "color: red; font-size:10vw";
-      cells[value[1]].style.cssText = "color: red; font-size:10vw";
-      cells[value[2]].style.cssText = "color: red; font-size:10vw";
-      document.getElementsByTagName("img")[0].style.width = "15vh"
+      cells[value[0]].style.cssText = "color: red; font-size:9vw";
+      cells[value[1]].style.cssText = "color: red; font-size:9vw";
+      cells[value[2]].style.cssText = "color: red; font-size:9vw";
+      document.getElementsByTagName("img")[0].style.width = "25vh"
 
       isgameover = true;
       music.play();
@@ -52,7 +52,7 @@ Array.from(cells).forEach((element) => {
       checkWin();
       if (isgameover == false) {
         document.getElementsByClassName("info")[0].innerHTML =
-          " turn of " + turn;
+           turn+"'s Turn";
       }
     }
   });
@@ -66,10 +66,10 @@ function reset() {
   music.currentTime = 0;
   turn = "X";
   isgameover=false;
-  document.getElementsByClassName("info")[0].innerHTML = " turn of " + turn;
+  document.getElementsByClassName("info")[0].innerHTML = turn+"'s Turn";
   document.getElementsByTagName("img")[0].style.width = "0vh"
   Array.from(cells).forEach((element)=>{
-    element.style.cssText = "color: black; font-size:9vw";
+    element.style.cssText = "color: black; font-size:8vw";
   })
   
 }
