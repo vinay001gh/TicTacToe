@@ -2,7 +2,30 @@ let music = new Audio("ticTacToeMedia/music.mp3");
 let audioTurn = new Audio("ticTacToeMedia/ting.mp3");
 // let gameover = new Audio("TicTacToe/ticTacToeMedia/gameover.mp3");
 // variable x or 0
+var screenWidth = window.innerWidth;
+// size change function
+var size;
+function sizeChange (){
+   if (screenWidth<800) {
+     
+     size="30vw";
+   }
+   else{
+     size="8vw";
+   }
+}
+let winSize;
+function winSizeChange(){
+  if (screenWidth<800) {
+     
+    winSize="31vw";
+  }
+  else{
+    winSize="9vw";
+  }
+}
 
+// end
 let turn = "X";
 let isgameover = false;
 // function to change the turn
@@ -29,9 +52,15 @@ const checkWin = () => {
     ) {
       document.getElementsByClassName("info")[0].innerHTML =
         cells[value[0]].innerHTML + " won";
-      cells[value[0]].style.cssText = "color: red; font-size:9vw";
-      cells[value[1]].style.cssText = "color: red; font-size:9vw";
-      cells[value[2]].style.cssText = "color: red; font-size:9vw";
+      cells[value[0]].style.color = "red";
+      winSizeChange();
+      cells[value[0]].style.fontSize = winSize;
+      cells[value[1]].style.color="red";
+      winSizeChange();
+      cells[value[1]].style.fontSize = winSize;
+      cells[value[2]].style.color="red";
+      winSizeChange();
+      cells[value[2]].style.fontSize = winSize;
       document.getElementsByTagName("img")[0].style.width = "25vh"
 
       isgameover = true;
@@ -57,6 +86,7 @@ Array.from(cells).forEach((element) => {
     }
   });
 });
+
 // reset function
 function reset() {
   Array.from(cells).forEach((element) => {
@@ -69,7 +99,10 @@ function reset() {
   document.getElementsByClassName("info")[0].innerHTML = turn+"'s Turn";
   document.getElementsByTagName("img")[0].style.width = "0vh"
   Array.from(cells).forEach((element)=>{
-    element.style.cssText = "color: black; font-size:8vw";
+    //element.style.cssText = "color: black;font-size:8vw";
+    element.style.color = "black";
+    sizeChange();
+    element.style.fontSize=size;
   })
   
 }

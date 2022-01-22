@@ -4,9 +4,17 @@
   margin: 0;
   padding: 0;
 }
-.container {
-  background-image: url(ticTacToeMedia/beachbg.jpg);
+
+#background-video {
+  width: 100vw;
   height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
 }
 
 
@@ -91,12 +99,12 @@ img {
     
 }
 #reset:hover{
-  background-color: rgba(143, 221, 156, 0.568);
+  background-color: rgba(94, 62, 233, 0.568);
 }
 .info{
   font-size: 2.5vw;
   font-family: "Yuji Boku", serif;
-  font-size: 4vw;
+ 
   font-weight: 2vw;
   text-shadow: 0.3vw 0.3vw rgb(50, 50, 245);
   color: white;
@@ -108,9 +116,32 @@ img {
     display: block;
     position: absolute;
     right: 40vw;
-    margin-top: -50vh;
+    margin-top: -20vh;
 
 
+  }
+  .info{
+    font-size: 10vw;
+  }
+  #reset{
+    padding: 0.3vw;
+    width: 30vw;
+    font-size: 5vw;
+    font-weight: 2vw;
+    margin: 4vw;
+    margin-left: 0vw;
+    border-radius: 4vw;
+  }
+  .header{
+    font-size: 10vw;
+  }
+  .cell{
+    font-size: 30vw;
+  }
+  .board{
+    grid-template-rows: repeat(3, 32vw);
+    margin-top: 16.5vh;
+    grid-template-columns: repeat(3, 28vw);
   }
 
   
